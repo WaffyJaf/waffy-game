@@ -126,27 +126,27 @@ export const metadata: Metadata = {
 export default function AllTimePopular() {
   // Custom renderer for images in ReactMarkdown
   const components: Components = {
-  img: ({ node, src, alt, ...props }) => {
-    return (
-      <div className="flex items-center justify-center my-4">
-        <div className="relative w-full md:w-[300px] h-[120px]">
-          <Image
-            src={src || '/gamepc/placeholder.jpg'}
-            alt={alt || 'Game image'}
-            fill
-            className="object-cover rounded-lg"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            {...props}
-          />
-        </div>
+  img: ({ node: _node, src, alt, ...props }) => {
+  return (
+    <div className="flex items-center justify-center my-4">
+      <div className="relative w-full md:w-[300px] h-[120px]">
+        <Image
+          src={src || '/gamepc/placeholder.jpg'}
+          alt={alt || 'Game image'}
+          fill
+          className="object-cover rounded-lg"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          {...props}
+        />
       </div>
-    );
-  },
-  h2: ({ node, children, ...props }) => (
-    <h2 className="mt-8 mb-4 text-3xl font-bold text-gray-800" {...props}>
-      {children}
-    </h2>
-  ),
+    </div>
+  );
+},
+h2: ({ node: _node, children, ...props }) => (
+  <h2 className="mt-8 mb-4 text-3xl font-bold text-gray-800" {...props}>
+    {children}
+  </h2>
+),
 };
 
   return (
