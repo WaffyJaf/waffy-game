@@ -125,27 +125,26 @@ export const metadata: Metadata = {
 export default function AllTimePopular() {
   
   const components: Components = {
-    img: (({ src, alt }) => (
-      <div className="flex items-center justify-center my-4">
-        <div className="relative w-full md:w-[1200px] h-[500px]">
-          <Image
-            src={src as string || '/gamepc/placeholder.jpg'}
-            alt={alt as string || 'Game image'}
-            fill
-            className="object-cover rounded-lg"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-      </div>
-    )) as Components['img'],
+  img: (({ src, alt }) => (
+    <div className="flex items-center justify-center my-4">
+      <Image
+        src={src as string || '/gamepc/placeholder.jpg'}
+        alt={alt as string || 'Game image'}
+        width={800} // ขนาดที่เหมาะสมและคงที่
+        height={333} // สัดส่วน 1200x500 ลดขนาดลง
+        className="object-cover rounded-lg"
+        sizes="(max-width: 768px) 100vw, 50vw"
+        priority // preload ช่วยให้โหลดเร็วขึ้นถ้าอยู่บนสุด
+      />
+    </div>
+  )) as Components['img'],
 
-    h2: (({ children }) => (
-      <h2 className="mt-8 mb-4 text-3xl font-bold text-gray-800">
-        {children}
-      </h2>
-    )) as Components['h2'],
-  };
-
+  h2: (({ children }) => (
+    <h2 className="mt-8 mb-4 text-3xl font-bold text-gray-800">
+      {children}
+    </h2>
+  )) as Components['h2'],
+};
   return (
     <div className="px-6 py-8 mx-auto bg-white max-w-7xl">
       <Breadcrumb />

@@ -113,24 +113,16 @@ export default function Home() {
           </div>
         )}
         <div className="relative w-full md:h-[400px]">
-          {bannerImages.map((banner, index) => (
-            <Link
-              key={index}
-              href={banner.href}
-              onClick={handleBannerClick}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <Image
-                src={banner.src}
-                alt={banner.alt}
-                fill
-                className="object-cover"
-                priority={index === 0}
-              />
-            </Link>
-          ))}
+          <Link href={bannerImages[currentSlide].href} onClick={handleBannerClick} className="relative block w-full h-full">
+            <Image
+              src={bannerImages[currentSlide].src}
+              alt={bannerImages[currentSlide].alt}
+              width={1200}     // กำหนดขนาดที่เหมาะสม
+              height={400}     // ให้เท่ากับ container height
+              className="object-cover rounded-lg"
+              priority={currentSlide === 0}
+            />
+          </Link>
         </div>
         {/* Carousel Controls */}
         <button
