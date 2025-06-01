@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown ,  { Components } from 'react-markdown';
-import { ComponentPropsWithoutRef } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 
 // Define interface for article data
