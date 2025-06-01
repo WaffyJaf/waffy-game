@@ -48,10 +48,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="th">
-      <body className="flex flex-col min-h-100 bg-gray-100">
+      <body className="flex flex-col bg-gray-100 min-h-100">
         <Navbar />
         <main className="flex-grow">{children}</main>
-        <footer className="bg-gray-900 text-white text-center p-4">
+        <footer className="p-4 text-center text-white bg-gray-900">
           <p>© {new Date().getFullYear()} WaffyGame. สงวนลิขสิทธิ์.</p>
         </footer>
       </body>

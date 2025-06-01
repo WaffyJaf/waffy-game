@@ -1,10 +1,6 @@
 'use client';
 
-import type { Metadata } from 'next';
-import Image from 'next/image';
 import { 
-  MapPinIcon, 
-  PhoneIcon, 
   EnvelopeIcon, 
   ClockIcon,
   ChatBubbleLeftRightIcon
@@ -54,7 +50,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="mb-1 font-semibold text-gray-800">อีเมล</h3>
-                    <p className="text-gray-600">"waffyy2003@gmail.com"</p>
+                    <p className="text-gray-600">waffyy2003@gmail.com</p>
                     
                   </div>
                 </div>
