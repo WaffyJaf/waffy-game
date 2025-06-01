@@ -31,8 +31,8 @@ const gameCategories = [
     id: 'mobile',
     title: '10 เกมมือถือน่าเล่น',
     description: 'เกมมือถือที่สนุกและเข้าถึงง่ายสำหรับทุกวัย.',
-    image: '/gamemobile/nikki.webp',
-    href: '/popular-games/mobile',
+    image: '/gamemobile/afk.jpg',
+    href: '/mobile',
   },
   {
     id: 'new-game',

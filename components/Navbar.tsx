@@ -49,11 +49,6 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/new-games" className="transition-colors hover:text-blue-400">
-              เกมมาใหม่
-            </Link>
-          </li>
-          <li>
             <Link href="/pc-specs" className="transition-colors hover:text-blue-400">
               สเปคคอมเล่นเกม
             </Link>
@@ -89,15 +84,6 @@ const Navbar: React.FC = () => {
                   onClick={toggleMenu}
                 >
                   หน้าแรก
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/new-games"
-                  className="text-lg transition-colors hover:text-blue-400"
-                  onClick={toggleMenu}
-                >
-                  เกมมาใหม่
                 </Link>
               </li>
               <li>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ReactMarkdown ,  { Components } from 'react-markdown';
+import { ComponentPropsWithoutRef } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 
 // Define interface for article data
@@ -123,29 +124,28 @@ export const metadata: Metadata = {
 };
 
 export default function AllTimePopular() {
-  // Custom renderer for images in ReactMarkdown
+  
   const components: Components = {
-  img: ({ src, alt, ...props }) => (
-  <div className="flex items-center justify-center my-4">
-    <div className="relative w-full md:w-[300px] h-[120px]">
-      <Image
-        src={src || '/gamepc/placeholder.jpg'}
-        alt={alt || 'Game image'}
-        fill
-        className="object-cover rounded-lg"
-        sizes="(max-width: 768px) 100vw, 50vw"
-        {...props}
-      />
-    </div>
-  </div>
-),
+    img: ({ src, alt }: any) => (
+      <div className="flex items-center justify-center my-4">
+        <div className="relative w-full md:w-[1200px] h-[500px] mt-8">
+          <Image
+            src={src || '/gamepc/placeholder.jpg'}
+            alt={alt || 'Game image'}
+            fill
+            className="object-cover rounded-lg"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+      </div>
+    ),
 
-h2: ({ children, ...props }) => (
-  <h2 className="mt-8 mb-4 text-3xl font-bold text-gray-800" {...props}>
-    {children}
-  </h2>
-),
-};
+    h2: ({ children }: any) => (
+      <h2 className="mt-8 mb-4 text-3xl font-bold text-gray-800">
+        {children}
+      </h2>
+    ),
+  };
 
   return (
     <div className="px-6 py-8 mx-auto bg-white max-w-7xl">
