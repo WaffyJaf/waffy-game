@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 // Banner images for the carousel
 const bannerImages = [
-  { src: '/banner/banner-3.jpg', alt: 'NEW GAME', href: '/new-games' },
+  { src: '/banner/banner-3.jpg', alt: 'NEW GAME', href: '/new-game' },
   { src: '/banner/banner-1.jpg', alt: 'GAME POPULAR', href: '/all-time-popular' },
   { src: '/banner/banner-2.jpg', alt: 'GAMING COMPUTER', href: '/pc-specs' },
 ];
@@ -39,7 +39,7 @@ const gameCategories = [
     title: 'เกมมาใหม่ห้ามพลาด 2025',
     description: 'เกมมาใหม่ปี 2025 ที่น่าจับตามอง.',
     image: '/newgame/inzoi.jpg',
-    href: '/popular-games/mobile',
+    href: '/new-game',
   },
 ];
 
@@ -47,32 +47,32 @@ const gameCategories = [
 const newsItems = [
   {
     id: 'news-1',
-    title: 'เกมใหม่ InZOI เปิดตัวในงาน GDC 2025',
-    description: 'พบกับเกมจำลองชีวิตสุดล้ำจาก Krafton ที่จะเปลี่ยนวงการเกม.',
-    image: '/news/news-1.jpg',
-    href: '/news/inzoi-launch',
+    title: 'แนะนำคีย์บอร์ด Blue Switch และ Red Switch ราคาสบายกระเป๋า',
+    description: 'แนะนำคัย์บอร์ดและความแตกต่างของ Blue Switch vs Red Switch ',
+    image: '/banner/key-banner.jpg',
+    href: '/keyboard-1',
   },
   {
     id: 'news-2',
-    title: 'งาน E3 2025 ประกาศวันจัดงาน',
-    description: 'เตรียมพบกับงานเกมสุดยิ่งใหญ่พร้อมเผยเกมใหม่เพียบ.',
-    image: '/news/news-2.jpg',
-    href: '/news/e3-2025',
+    title: '5 ไอเดีย จัดโต๊ะคอม จัดโต๊ะทำงาน',
+    description: 'ไอเดียจัดโต๊ะคอมที่ติดแกรม มินิมอล ไม่ซ้ำใคร.',
+    image: '/banner/waffy.jpg',
+    href: '/idea-work',
   },
-  {
-    id: 'news-3',
-    title: 'อัปเดตแพทช์ล่าสุดของ RoV',
-    description: 'แพทช์ใหม่เพิ่มฮีโร่และปรับสมดุลเกมสุดมันส์.',
-    image: '/news/news-3.jpg',
-    href: '/news/rov-patch',
-  },
-  {
-    id: 'news-4',
-    title: 'Roblox เปิดตัวโหมด VR เต็มรูปแบบ',
-    description: 'สัมผัสประสบการณ์ Roblox ในโลกเสมือนจริงครั้งแรก.',
-    image: '/news/news-4.jpg',
-    href: '/news/roblox-vr',
-  },
+  // {
+  //   id: 'news-3',
+  //   title: 'อัปเดตแพทช์ล่าสุดของ RoV',
+  //   description: 'แพทช์ใหม่เพิ่มฮีโร่และปรับสมดุลเกมสุดมันส์.',
+  //   image: '/news/news-3.jpg',
+  //   href: '/news/rov-patch',
+  // },
+  // {
+  //   id: 'news-4',
+  //   title: 'Roblox เปิดตัวโหมด VR เต็มรูปแบบ',
+  //   description: 'สัมผัสประสบการณ์ Roblox ในโลกเสมือนจริงครั้งแรก.',
+  //   image: '/news/news-4.jpg',
+  //   href: '/news/roblox-vr',
+  // },
 ];
 
 export default function Home() {
@@ -197,9 +197,9 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">ข่าวสารเกมล่าสุด</h2>
+        <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">How To</h2>
         <p className="mb-6 text-center text-gray-600">
-          อัปเดตข่าวสารวงการเกม งานอีเวนต์ และการเปิดตัวเกมใหม่.
+          อัปเดตบทความน่ารู้ สำหรับสาย IT.
         </p>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
           {newsItems.map((news) => (

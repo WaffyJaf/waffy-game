@@ -82,13 +82,12 @@ export const metadata: Metadata = {
     description: articleData.description,
     url: 'https://gamehub.com/all-time-popular',
     images: [
-      { url: articleData.image, width: 1200, height: 630, alt: articleData.title },
-      { url: '/gamepc/stray.webp', width: 800, height: 450, alt: 'Stray' },
+      { url: '/gamepc/stray.webp', width: 800, height: 450, alt: 'Stray' }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '10 เกมยอดนิยมตลอดกาล - GameHub',
+    title: '7 เกมแนวเนื้อเรื่องผจญภัย - WaffyGame',
     description: articleData.description,
     images: [articleData.image],
   },

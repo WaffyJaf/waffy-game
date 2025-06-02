@@ -18,11 +18,11 @@ export const metadata: Metadata  = {
   openGraph: {
     title: 'WaffyGame - ศูนย์รวมเกมและข่าวสาร สเปคคอมเล่นเกม',
     description: 'ค้นพบเกมมาใหม่ เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมที่ WaffyGame อัปเดตทุกวัน.',
-    url: 'https://gamehub.com',
+    url: 'https://WaffyGame.com',
     siteName: 'WaffyGame',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/banner/banner-1.jpg',
         width: 1200,
         height: 630,
         alt: 'GameHub - เกมมาใหม่และข่าวสาร',

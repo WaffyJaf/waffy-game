@@ -48,16 +48,16 @@ const Navbar: React.FC = () => {
               หน้าแรก
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/pc-specs" className="transition-colors hover:text-blue-400">
               สเปคคอมเล่นเกม
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link href="/news" className="transition-colors hover:text-blue-400">
               ข่าวสารเกม
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/contact" className="transition-colors hover:text-blue-400">
               ติดต่อเรา
