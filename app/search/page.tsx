@@ -4,13 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Metadata } from 'next';
-
-// กำหนด Metadata สำหรับ SEO (แทนการใช้ <Head>)
-export const metadata: Metadata = {
-  title: 'ค้นหา - WaffyGame',
-  description: 'ค้นหาเกมและบทความบน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด',
-};
+import Head from 'next/head';
 
 // ข้อมูลหมวดหมู่เกมและข่าว
 const gameCategories = [
@@ -102,6 +96,19 @@ function SearchContent() {
 
   return (
     <div className="min-h-screen px-4 pt-20 pb-8 mx-auto bg-[#1E2527] text-white max-w-7xl">
+      {/* SEO Meta Tags */}
+      <Head>
+        <title>{query ? `ค้นหา ${query} - WaffyGame` : 'ค้นหา - WaffyGame'}</title>
+        <meta
+          name="description"
+          content={
+            query
+              ? `ค้นหาเกมและบทความเกี่ยวกับ "${query}" บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`
+              : 'ค้นหาเกมและบทความบน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด'
+          }
+        />
+      </Head>
+
       <h1 className="mb-8 text-3xl font-bold text-[#00DDEB] font-prompt">
         ผลลัพธ์การค้นหา: "{query || 'ไม่มีคำค้นหา'}"
       </h1>
