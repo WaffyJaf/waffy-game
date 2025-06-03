@@ -1,12 +1,18 @@
 "use client";
-import { useState, useEffect } from 'react';
-import Head from 'next/head';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { Metadata } from 'next';
 
+// กำหนด Metadata สำหรับ SEO (แทนการใช้ <Head>)
+export const metadata: Metadata = {
+  title: 'ค้นหา - WaffyGame',
+  description: 'ค้นหาเกมและบทความบน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด',
+};
 
+// ข้อมูลหมวดหมู่เกมและข่าว
 const gameCategories = [
   {
     id: 'all-time',
@@ -55,7 +61,8 @@ const newsItems = [
   },
 ];
 
-export default function SearchPage() {
+// คอมโพเนนต์สำหรับส่วนการค้นหาที่ใช้ useSearchParams
+function SearchContent() {
   const searchParams = useSearchParams();
   const [query, setQuery] = useState(searchParams.get('q') || '');
   const [results, setResults] = useState<(typeof gameCategories[0] | typeof newsItems[0])[]>([]);
@@ -96,7 +103,7 @@ export default function SearchPage() {
   return (
     <div className="min-h-screen px-4 pt-20 pb-8 mx-auto bg-[#1E2527] text-white max-w-7xl">
       <h1 className="mb-8 text-3xl font-bold text-[#00DDEB] font-prompt">
-        ผลลัพธ์การค้นหา: &quot;{query || 'ไม่มีคำค้นหา'}&quot;
+        ผลลัพธ์การค้นหา: "{query || 'ไม่มีคำค้นหา'}"
       </h1>
       {results.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -137,18 +144,18 @@ export default function SearchPage() {
         </div>
       ) : (
         <p className="text-gray-300 font-prompt">
-          ไม่พบผลลัพธ์สำหรับ &quot;{query}&quot;. ลองใช้คำค้นหาอื่น
+          ไม่พบผลลัพธ์สำหรับ "{query}". ลองใช้คำค้นหาอื่น
         </p>
       )}
-
-      {/* SEO Meta Tags */}
-     <Head>
-  <title>ค้นหา {query} - WaffyGame</title>
-<meta
-  name="description"
-  content={`ค้นหาเกมและบทความเกี่ยวกับ &quot;${query}&quot; บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`}
-/>
-</Head>
     </div>
+  );
+}
+
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#1E2527] text-white">กำลังโหลด...</div>}>
+      <SearchContent />
+    </Suspense>
   );
 }
