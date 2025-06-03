@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -141,13 +142,13 @@ export default function SearchPage() {
       )}
 
       {/* SEO Meta Tags */}
-      <head>
-        <title>ค้นหา {query} - WaffyGame</title>
-        <meta
-          name="description"
-          content={`ค้นหาเกมและบทความเกี่ยวกับ "${query}" บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`}
-        />
-      </head>
+     <Head>
+  <title>ค้นหา {query} - WaffyGame</title>
+  <meta
+    name="description"
+    content={`ค้นหาเกมและบทความเกี่ยวกับ "${query}" บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`}
+  />
+</Head>
     </div>
   );
 }
