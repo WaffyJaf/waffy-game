@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import Navbar from '../components/Navbar';
-import Head from 'next/head';
 import './globals.css';
 
-export const metadata: Metadata  = {
+export const metadata: Metadata = {
   title: 'WaffyGame - แนะนำเกม เกมมาใหม่ เกมยอดนิยม  เสปคคอมเล่นเกม ',
   description: 'เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมล่าสุด อัปเดตทุกวัน!',
   keywords: [
@@ -16,9 +15,13 @@ export const metadata: Metadata  = {
     'เกม PC',
     'เกมคอนโซล',
   ],
+  verification: {
+    google: 'oeexwDvHghAj0KHYllVqIFRmR_F_H5NuOTqYn807Y1I',
+  },
   openGraph: {
     title: 'WaffyGame - ศูนย์รวมเกมและข่าวสาร สเปคคอมเล่นเกม',
-    description: 'ค้นพบเกมมาใหม่ เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมที่ WaffyGame อัปเดตทุกวัน.',
+    description:
+      'ค้นพบเกมมาใหม่ เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมที่ WaffyGame อัปเดตทุกวัน.',
     url: 'https://WaffyGame.com',
     siteName: 'WaffyGame',
     images: [
@@ -32,7 +35,6 @@ export const metadata: Metadata  = {
     locale: 'th_TH',
     type: 'website',
   },
-  
   twitter: {
     card: 'summary_large_image',
     title: 'WaffyGame - แนะนำเกมและข่าวสาร',
@@ -47,11 +49,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-   return (
+  return (
     <html lang="th">
-      <Head>
-        <meta name="google-site-verification" content="oeexwDvHghAj0KHYllVqIFRmR_F_H5NuOTqYn807Y1I" />
-      </Head>
       <body className="flex flex-col bg-gray-100 min-h-100 mt-25">
         <Navbar />
         <main className="flex-grow">{children}</main>
@@ -62,5 +61,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
