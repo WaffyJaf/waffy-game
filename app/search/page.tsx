@@ -96,7 +96,7 @@ export default function SearchPage() {
   return (
     <div className="min-h-screen px-4 pt-20 pb-8 mx-auto bg-[#1E2527] text-white max-w-7xl">
       <h1 className="mb-8 text-3xl font-bold text-[#00DDEB] font-prompt">
-        ผลลัพธ์การค้นหา: "{query || 'ไม่มีคำค้นหา'}"
+        ผลลัพธ์การค้นหา: &quot;{query || 'ไม่มีคำค้นหา'}&quot;
       </h1>
       {results.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -137,17 +137,17 @@ export default function SearchPage() {
         </div>
       ) : (
         <p className="text-gray-300 font-prompt">
-          ไม่พบผลลัพธ์สำหรับ "{query}". ลองใช้คำค้นหาอื่น
+          ไม่พบผลลัพธ์สำหรับ &quot;{query}&quot;. ลองใช้คำค้นหาอื่น
         </p>
       )}
 
       {/* SEO Meta Tags */}
      <Head>
   <title>ค้นหา {query} - WaffyGame</title>
-  <meta
-    name="description"
-    content={`ค้นหาเกมและบทความเกี่ยวกับ "${query}" บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`}
-  />
+<meta
+  name="description"
+  content={`ค้นหาเกมและบทความเกี่ยวกับ &quot;${query}&quot; บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`}
+/>
 </Head>
     </div>
   );
