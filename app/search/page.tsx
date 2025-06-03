@@ -103,14 +103,14 @@ function SearchContent() {
           name="description"
           content={
             query
-              ? `ค้นหาเกมและบทความเกี่ยวกับ "${query}" บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`
+              ? `ค้นหาเกมและบทความเกี่ยวกับ ${query} บน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด`
               : 'ค้นหาเกมและบทความบน WaffyGame พบกับเกมยอดนิยมและข้อมูลล่าสุด'
           }
         />
       </Head>
 
       <h1 className="mb-8 text-3xl font-bold text-[#00DDEB] font-prompt">
-        ผลลัพธ์การค้นหา: "{query || 'ไม่มีคำค้นหา'}"
+        ผลลัพธ์การค้นหา: {query || 'ไม่มีคำค้นหา'}
       </h1>
       {results.length > 0 ? (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -151,14 +151,14 @@ function SearchContent() {
         </div>
       ) : (
         <p className="text-gray-300 font-prompt">
-          ไม่พบผลลัพธ์สำหรับ "{query}". ลองใช้คำค้นหาอื่น
+          ไม่พบผลลัพธ์สำหรับ {query || 'ไม่มีคำค้นหา'}. ลองใช้คำค้นหาอื่น
         </p>
       )}
     </div>
   );
 }
 
-
+// คอมโพเนนต์หลักที่ห่อด้วย Suspense
 export default function SearchPage() {
   return (
     <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-[#1E2527] text-white">กำลังโหลด...</div>}>
