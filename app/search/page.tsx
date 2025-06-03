@@ -95,7 +95,7 @@ function SearchContent() {
   };
 
   return (
-    <div className="min-h-screen px-4 pt-20 pb-8 mx-auto bg-[#1E2527] text-white max-w-7xl">
+    <div className="min-h-screen px-4 pt-20 pb-8 mx-auto text-white max-w-7xl">
       {/* SEO Meta Tags */}
       <Head>
         <title>{query ? `ค้นหา ${query} - WaffyGame` : 'ค้นหา - WaffyGame'}</title>

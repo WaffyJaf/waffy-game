@@ -104,21 +104,8 @@ export default function Home() {
     },
   };
 
-  return (
-    <div className="min-h-screen px-6 pt-20 mx-auto text-white bg-[#1E2527] max-w-7xl">
-      {/* SEO Meta Tags */}
-      <Head>
-        <title>WaffyGame - แนะนำเกม เกมมาใหม่ เกมยอดนิยม สเปคคอมเล่นเกม</title>
-        <meta
-          name="description"
-          content="ค้นพบเกมมาใหม่ เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมที่ WaffyGame อัปเดตทุกวัน."
-        />
-        <meta
-          name="keywords"
-          content="เกมมาใหม่ 2025, เกมยอดนิยม, แนะนำเกม PC, สเปคคอมสำหรับเล่นเกม, ข่าวสารวงการเกม, WaffyGame, เกมมือถือ 2025"
-        />
-      </Head>
-
+ return (
+    <div className="min-h-screen px-6 mx-auto text-white bg-gradient-to-b max-w-7xl">
       {/* Banner Section */}
       <motion.section
         className="relative overflow-hidden text-center rounded-lg"
@@ -135,9 +122,6 @@ export default function Home() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl font-bold text-cyan-300 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]">
-                {bannerImages[currentSlide].alt}
-              </h2>
             </motion.div>
           )}
         </AnimatePresence>
@@ -188,6 +172,110 @@ export default function Home() {
                 index === currentSlide ? 'bg-cyan-400 shadow-[0_0_10px_rgba(0,255,255,0.7)]' : 'bg-gray-600'
               }`}
             />
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Categories Section */}
+      <motion.section
+        className="mt-15"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mb-8 text-center">
+          <h2 className="mb-5 text-4xl font-bold text-white md:text-5xl drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]">
+            เกมแนะนำสำหรับคุณ
+          </h2>
+          <p className="mt-2 text-lg text-gray-300">
+            คุณกำลังตามหาเกมอยู่ใช่หรือไม่ สำรวจเกมที่เหมาะกับคุณได้ที่นี่!
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-6 mb-12 md:grid-cols-2">
+          {gameCategories.map((category) => (
+            <motion.div
+              key={category.id}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              viewport={{ once: true }}
+            >
+              <Link
+                href={category.href}
+                className="block overflow-hidden transition-all duration-300 bg-gray-900 border rounded-lg border-cyan-500/30 hover:border-cyan-500"
+              >
+                <div className="relative w-full h-70">
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    className="object-cover transition-opacity duration-300 opacity-90 hover:opacity-100"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
+                </div>
+                <div className="p-4">
+                  <h2 className="mb-2 text-xl font-semibold text-cyan-300">{category.title}</h2>
+                  <p className="text-gray-400">{category.description}</p>
+                  <span className="inline-block mt-2 transition-colors duration-300 text-cyan-400 hover:text-cyan-300">
+                    อ่านเพิ่มเติม
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* News Section */}
+      <motion.section
+        className="mt-12 mb-20"
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <h2 className="mb-4 text-3xl font-bold text-center text-cyan-300 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]">
+          How To
+        </h2>
+        <p className="mb-6 text-center text-gray-300">
+          อัปเดตบทความน่ารู้ สำหรับสาย IT.
+        </p>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+          {newsItems.map((news) => (
+            <motion.div
+              key={news.id}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              viewport={{ once: true }}
+            >
+              <Link
+                href={news.href}
+                className="block overflow-hidden transition-all duration-300 bg-gray-900 border rounded-lg border-cyan-500/30 hover:border-cyan-500"
+              >
+                <div className="relative w-full h-48">
+                  <Image
+                    src={news.image}
+                    alt={news.title}
+                    fill
+                    className="object-cover transition-opacity duration-300 opacity-90 hover:opacity-100"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
+                </div>
+                <div className="p-4">
+                  <h3 className="mb-2 text-lg font-semibold text-cyan-300">{news.title}</h3>
+                  <p className="text-gray-400">{news.description}</p>
+                  <span className="inline-block mt-2 transition-colors duration-300 text-cyan-400 hover:text-cyan-300">
+                    อ่านเพิ่มเติม
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </motion.section>

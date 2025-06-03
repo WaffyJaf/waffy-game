@@ -62,7 +62,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="th">
-      <body className="flex flex-col min-h-screen bg-gray-100">
+      <body className="flex flex-col min-h-screen bg-gray-100 mt-25">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <footer className="p-4 text-center text-white bg-gray-900">
