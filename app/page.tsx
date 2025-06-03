@@ -3,13 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import Head from 'next/head';
 
 // Banner images for the carousel
 const bannerImages = [
-  { src: '/banner/banner-3.jpg', alt: 'NEW GAME', href: '/new-game' },
-  { src: '/banner/banner-1.jpg', alt: 'GAME POPULAR', href: '/all-time-popular' },
-  { src: '/banner/banner-2.jpg', alt: 'GAMING COMPUTER', href: '/pc-specs' },
+  { src: '/banner/banner-3.jpg', alt: 'เกมมาใหม่', href: '/new-game' },
+  { src: '/banner/banner-1.jpg', alt: 'เกมยอดนิยม', href: '/all-time-popular' },
+  { src: '/banner/banner-2.jpg', alt: 'สเปคคอมเล่นเกม', href: '/pc-specs' },
 ];
 
 // Game categories
@@ -49,13 +49,13 @@ const newsItems = [
   {
     id: 'news-1',
     title: 'แนะนำคีย์บอร์ดราคาสบายกระเป๋า',
-    description: 'แนะนำคีย์บอร์ดและความแตกต่างของ Blue Switch vs Red Switch ',
+    description: 'แนะนำคีย์บอร์ดและความแตกต่างของ Blue Switch vs Red Switch.',
     image: '/banner/key-banner.jpg',
     href: '/keyboard-1',
   },
   {
     id: 'news-2',
-    title: '5 ไอเดีย จัดโต๊ะคอม จัดโต๊ะทำงาน ',
+    title: '5 ไอเดีย จัดโต๊ะคอม จัดโต๊ะทำงาน',
     description: 'ไอเดียจัดโต๊ะคอมที่ติดแกรม มินิมอล ไม่ซ้ำใคร.',
     image: '/banner/waffy.jpg',
     href: '/idea-work',
@@ -105,7 +105,20 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen px-6 mx-auto text-white bg-gradient-to-b max-w-7xl">
+    <div className="min-h-screen px-6 pt-20 mx-auto text-white bg-[#1E2527] max-w-7xl">
+      {/* SEO Meta Tags */}
+      <Head>
+        <title>WaffyGame - แนะนำเกม เกมมาใหม่ เกมยอดนิยม สเปคคอมเล่นเกม</title>
+        <meta
+          name="description"
+          content="ค้นพบเกมมาใหม่ เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมที่ WaffyGame อัปเดตทุกวัน."
+        />
+        <meta
+          name="keywords"
+          content="เกมมาใหม่ 2025, เกมยอดนิยม, แนะนำเกม PC, สเปคคอมสำหรับเล่นเกม, ข่าวสารวงการเกม, WaffyGame, เกมมือถือ 2025"
+        />
+      </Head>
+
       {/* Banner Section */}
       <motion.section
         className="relative overflow-hidden text-center rounded-lg"
@@ -122,6 +135,9 @@ export default function Home() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
+              <h2 className="text-3xl font-bold text-cyan-300 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]">
+                {bannerImages[currentSlide].alt}
+              </h2>
             </motion.div>
           )}
         </AnimatePresence>
@@ -178,7 +194,7 @@ export default function Home() {
 
       {/* Categories Section */}
       <motion.section
-        className="mt-15"
+        className="mt-12"
         variants={sectionVariants}
         initial="hidden"
         whileInView="visible"
@@ -192,7 +208,7 @@ export default function Home() {
             คุณกำลังตามหาเกมอยู่ใช่หรือไม่ สำรวจเกมที่เหมาะกับคุณได้ที่นี่!
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 mb-12 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 mb-12 md:grid-cols-2 lg:grid-cols-4">
           {gameCategories.map((category) => (
             <motion.div
               key={category.id}
@@ -206,13 +222,13 @@ export default function Home() {
                 href={category.href}
                 className="block overflow-hidden transition-all duration-300 bg-gray-900 border rounded-lg border-cyan-500/30 hover:border-cyan-500"
               >
-                <div className="relative w-full h-70">
+                <div className="relative w-full h-48">
                   <Image
                     src={category.image}
                     alt={category.title}
                     fill
                     className="object-cover transition-opacity duration-300 opacity-90 hover:opacity-100"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                 </div>
@@ -243,7 +259,7 @@ export default function Home() {
         <p className="mb-6 text-center text-gray-300">
           อัปเดตบทความน่ารู้ สำหรับสาย IT.
         </p>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2">
           {newsItems.map((news) => (
             <motion.div
               key={news.id}
@@ -263,7 +279,7 @@ export default function Home() {
                     alt={news.title}
                     fill
                     className="object-cover transition-opacity duration-300 opacity-90 hover:opacity-100"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                 </div>
@@ -295,8 +311,8 @@ export default function Home() {
                   '@type': 'CollectionPage',
                   name: category.title,
                   description: category.description,
-                  image: `https://waffygame.com${category.image}`,
-                  url: `https://waffygame.com${category.href}`,
+                  image: `https://waffy-game.vercel.app${category.image}`,
+                  url: `https://waffy-game.vercel.app${category.href}`,
                 },
               })),
               ...newsItems.map((news, index) => ({
@@ -306,8 +322,8 @@ export default function Home() {
                   '@type': 'NewsArticle',
                   name: news.title,
                   description: news.description,
-                  image: `https://waffygame.com${news.image}`,
-                  url: `https://waffygame.com${news.href}`,
+                  image: `https://waffy-game.vercel.app${news.image}`,
+                  url: `https://waffy-game.vercel.app${news.href}`,
                 },
               })),
             ],
@@ -318,13 +334,13 @@ export default function Home() {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'หน้าแรก',
-                  item: 'https://waffygame.com',
+                  item: 'https://waffy-game.vercel.app',
                 },
                 {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'เกมยอดนิยม',
-                  item: 'https://waffygame.com/popular-games',
+                  item: 'https://waffy-game.vercel.app/all-time-popular',
                 },
               ],
             },
