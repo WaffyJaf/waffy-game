@@ -9,17 +9,17 @@ import {
 export default function ContactPage() {
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br">
       {/* Hero Section */}
-     <div className="relative overflow-hidden bg-[url('/banner/banner-0.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/20"></div>
+     <div className="relative overflow-hidden bg-[url('/banner/banner-1.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative px-4 py-24 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl">
               ติดต่อเรา
             </h1>
             <i className=''></i>
-            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-blue-100">
+            <p className="max-w-3xl mx-auto text-xl leading-relaxed text-white">
               พร้อมให้บริการและตอบคำถามของคุณตลอด 24 ชั่วโมง
               <br />
               ส่งข้อความมาหาเราได้เลย เราจะตอบกลับอย่างรวดเร็ว

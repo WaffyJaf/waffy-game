@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Navbar from '../components/Navbar';
+import Head from 'next/head';
 import './globals.css';
 
 export const metadata: Metadata  = {
@@ -46,9 +47,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
+   return (
     <html lang="th">
-      <body className="flex flex-col bg-gray-100 min-h-100">
+      <Head>
+        <meta name="google-site-verification" content="oeexwDvHghAj0KHYllVqIFRmR_F_H5NuOTqYn807Y1I" />
+      </Head>
+      <body className="flex flex-col bg-gray-100 min-h-100 mt-25">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <footer className="p-4 text-center text-white bg-gray-900">

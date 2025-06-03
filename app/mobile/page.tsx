@@ -132,12 +132,12 @@ export default function AllTimePopular() {
       <div className="flex items-center justify-center my-4">
         <Image
           src={src as string || '/gamepc/placeholder.jpg'}
-          alt={alt as string || 'Game image'}
-          width={800} // ขนาดที่เหมาะสมและคงที่
-          height={333} // สัดส่วน 1200x500 ลดขนาดลง
+          alt={`ภาพเกม ${alt} 2025 - WaffyGame`}
+          width={800}
+          height={333}
           className="object-cover rounded-lg"
           sizes="(max-width: 768px) 100vw, 50vw"
-          priority // preload ช่วยให้โหลดเร็วขึ้นถ้าอยู่บนสุด
+          loading="lazy" // เปลี่ยนจาก priority เป็น lazy
         />
       </div>
     )) as Components['img'],

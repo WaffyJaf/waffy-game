@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -17,7 +14,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f1f1f1;
+    --background: radial-gradient(
+      ellipse at center,
+      #20405f 0%,     
+      #09051a 100%   
+    );
     --foreground: #ededed;
   }
 }

@@ -100,12 +100,12 @@ export default function AllTimePopular() {
       <div className="flex items-center justify-center my-4">
         <Image
           src={src as string || '/gamepc/placeholder.jpg'}
-          alt={alt as string || 'Game image'}
-          width={800} // ขนาดที่เหมาะสมและคงที่
-          height={333} // สัดส่วน 1200x500 ลดขนาดลง
+          alt={`ภาพเกม ${alt} 2025 - WaffyGame`}
+          width={800}
+          height={333}
           className="object-cover rounded-lg"
           sizes="(max-width: 768px) 100vw, 50vw"
-          priority // preload ช่วยให้โหลดเร็วขึ้นถ้าอยู่บนสุด
+          loading="lazy" // เปลี่ยนจาก priority เป็น lazy
         />
       </div>
     )) as Components['img'],
@@ -118,9 +118,9 @@ export default function AllTimePopular() {
   };
 
   return (
-    <div className="px-6 py-8 mx-auto bg-white max-w-7xl">
+    <div className="px-6 py-8 mx-auto bg-white max-w-7xl ">
       <Breadcrumb />
-      <h1 className="mt-10 mb-6 text-4xl font-bold text-gray-800 md:text-5xl">{articleData.title}</h1>
+      <h1 className="mb-6 text-4xl font-bold text-gray-800 mt-100 md:text-5xl ">{articleData.title}</h1>
       <div className="relative w-full h-64 mb-6 md:h-140">
         <Image
           src={articleData.image}
@@ -154,6 +154,18 @@ export default function AllTimePopular() {
           <Link href="/news" className="text-blue-600 hover:underline">
             ข่าวสารเกม
           </Link>
+        </div>
+      </section>
+      <section className="text-center mt-15">
+        <h2 className="text-2xl font-semibold text-gray-800">คุณตื่นเต้นกับเกมไหนในปี 2025?</h2>
+        <p className="text-gray-700">แสดงความคิดเห็นด้านล่างหรือแชร์เกมที่คุณรอคอย!</p>
+        <div className="flex justify-center mt-4 space-x-4">
+          <a href="https://twitter.com/intent/tweet?url=https://waffygame.com/new-games-2025&text=เกมใหม่ 2025 น่าเล่น! รีวิว inZOI, Assassin’s Creed Shadows และอีกมากมาย" className="text-blue-600 hover:underline">
+            แชร์ไป Twitter
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://waffygame.com/new-games-2025" className="text-blue-600 hover:underline">
+            แชร์ไป Facebook
+          </a>
         </div>
       </section>
 

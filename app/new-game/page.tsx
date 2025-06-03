@@ -15,7 +15,7 @@ interface ArticleData {
 
 // Article data
 const articleData: ArticleData = {
-  title: 'เกมมาใหม่ 2025',
+  title: 'เกมมาใหม่ 2025 แนะนำเกมน่าเล่น',
   description: 'เกมมาใหม่น่าเล่นในปี 2025',
   image: '/banner/banner-3.jpg',
   articleContent: `
@@ -64,7 +64,7 @@ const articleData: ArticleData = {
 
 // Metadata
 export const metadata: Metadata = {
-  title: 'เกมมาใหม่ 2025 - WaffyGame',
+  title: 'เกมใหม่ 2025: รีวิวเกมมาใหม่น่าเล่น - WaffyGame',
   description: articleData.description,
   keywords: [
     'เกมมาใหม่น่าเล่น',
@@ -84,12 +84,15 @@ export const metadata: Metadata = {
     images: [
       { url: '/banner/banner-3.jpg', width: 800, height: 450, alt: 'Stray' },
     ],
+    
+    
   },
   twitter: {
     card: 'summary_large_image',
     title: 'เกมมาใหม่ 2025 - WaffyGame',
     description: articleData.description,
     images: [articleData.image],
+    site: '@WaffyGame',
   },
 };
 
@@ -100,12 +103,12 @@ export default function AllTimePopular() {
       <div className="flex items-center justify-center my-4">
         <Image
           src={src as string || '/gamepc/placeholder.jpg'}
-          alt={alt as string || 'Game image'}
-          width={800} // ขนาดที่เหมาะสมและคงที่
-          height={333} // สัดส่วน 1200x500 ลดขนาดลง
+          alt={`ภาพเกม ${alt} 2025 - WaffyGame`}
+          width={800}
+          height={333}
           className="object-cover rounded-lg"
           sizes="(max-width: 768px) 100vw, 50vw"
-          priority // preload ช่วยให้โหลดเร็วขึ้นถ้าอยู่บนสุด
+          loading="lazy" // เปลี่ยนจาก priority เป็น lazy
         />
       </div>
     )) as Components['img'],
@@ -167,34 +170,35 @@ export default function AllTimePopular() {
             headline: articleData.title,
             description: articleData.description,
             image: [
-              `https://gamehub.com${articleData.image}`,
-              `https://gamehub.com/games/gta5.jpg`,
-              `https://gamehub.com/games/minecraft.jpg`,
-              `https://gamehub.com/games/thesims4.jpg`,
-              `https://gamehub.com/games/valorant.jpg`,
-              `https://gamehub.com/games/godofwar.jpg`,
-              `https://gamehub.com/games/blackmythwukong.jpg`,
-              `https://gamehub.com/games/littlenightmares.jpg`,
-              `https://gamehub.com/games/palworld.jpg`,
-              `https://gamehub.com/games/witcher3.jpg`,
-              `https://gamehub.com/games/genshinimpact.jpg`,
+              `https://waffygame.com${articleData.image}`,
+              `https://waffygame.com/newgame/inzoi.jpg`,
+              `https://waffygame.com/newgame/little3.jpg`,
+              `https://waffygame.com/newgame/monter.jpg`,
+              `https://waffygame.com/newgame/ass.jpg`,
+              `https://waffygame.com/newgame/0702.jpg`,
+              `https://waffygame.com/newgame/wk.jpg`,
             ],
-            url: 'https://gamehub.com/all-time-popular',
+            datePublished: '2025-01-01T08:00:00+07:00',
+            dateModified: '2025-06-03T15:20:00+07:00',
+            author: {
+              '@type': 'Organization',
+              name: 'WaffyGame',
+            },
             publisher: {
               '@type': 'Organization',
-              name: 'GameHub',
-              logo: { '@type': 'ImageObject', url: 'https://gamehub.com/og-image.jpg' },
+              name: 'WaffyGame',
+              logo: { '@type': 'ImageObject', url: 'https://waffygame.com/og-image.jpg' },
             },
             mainEntityOfPage: {
               '@type': 'WebPage',
-              '@id': 'https://gamehub.com/all-time-popular',
+              '@id': 'https://waffygame.com/new-games-2025',
             },
             breadcrumb: {
               '@type': 'BreadcrumbList',
               itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://gamehub.com' },
-                { '@type': 'ListItem', position: 2, name: 'เกมยอดนิยม', item: 'https://gamehub.com/popular-games' },
-                { '@type': 'ListItem', position: 3, name: articleData.title, item: 'https://gamehub.com/all-time-popular' },
+                { '@type': 'ListItem', position: 1, name: 'หน้าแรก', item: 'https://waffygame.com' },
+                { '@type': 'ListItem', position: 2, name: 'เกมมาใหม่', item: 'https://waffygame.com/new-games' },
+                { '@type': 'ListItem', position: 3, name: articleData.title, item: 'https://waffygame.com/new-games-2025' },
               ],
             },
           }),
