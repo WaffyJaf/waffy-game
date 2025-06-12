@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-// ข้อมูลชื่อหมวดหมู่
+
 const categoryNames: { [key: string]: string } = {
   pc: 'เกม PC เนื้อหาดี',
   mobile: 'เกมมือถือน่าเล่น',

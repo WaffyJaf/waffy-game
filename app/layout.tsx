@@ -5,6 +5,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'WaffyGame - แนะนำเกม เกมมาใหม่ เกมยอดนิยม สเปคคอมเล่นเกม',
   description: 'เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมล่าสุด อัปเดตทุกวัน!',
+  icons: {
+    icon: '/logo_waffy2.png', 
+  },
   keywords: [
     'เกมมาใหม่ 2025',
     'เกมยอดนิยม 2025',
