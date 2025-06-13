@@ -3,7 +3,10 @@ import Navbar from '../components/Navbar';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'WaffyGame - แนะนำเกม เกมมาใหม่ เกมยอดนิยม สเปคคอมเล่นเกม',
+ title: {
+    default: 'WaffyGame - แนะนำเกม เกมมาใหม่ เกมยอดนิยม สเปคคอมเล่นเกม',
+    template: '%s | WaffyGame'
+  },
   description: 'เกมยอดนิยม สเปคคอมสำหรับเล่นเกม และข่าวสารวงการเกมล่าสุด อัปเดตทุกวัน!',
   icons: {
     icon: '/logo_waffy2.png', 
